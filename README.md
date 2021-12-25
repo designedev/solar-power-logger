@@ -31,3 +31,16 @@
 }
 
 ```
+
+DB Table은 아래와 같이 구성합니다.
+```sql
+CREATE TABLE `solar_power_logs` (
+ `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'IDX',
+ `output` float NOT NULL DEFAULT 0 COMMENT '실시간 발전출력',
+ `accumulated_output` float NOT NULL DEFAULT 0 COMMENT '누적발전량',
+ `daily_accumulated_output` float NOT NULL DEFAULT 0 COMMENT '일일 누적발전량',
+ `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8
+```
+
