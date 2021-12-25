@@ -5,7 +5,10 @@ WORKDIR /app
 ADD . /app
 
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+
+RUN  ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/timezone && \
+     ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
+     pip3 install -r requirements.txt
 
 COPY . .
 ENTRYPOINT ["python3"]
