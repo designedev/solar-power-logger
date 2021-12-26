@@ -39,8 +39,10 @@ CREATE TABLE `solar_power_logs` (
  `output` float NOT NULL DEFAULT 0 COMMENT '실시간 발전출력',
  `accumulated_output` float NOT NULL DEFAULT 0 COMMENT '누적발전량',
  `daily_accumulated_output` float NOT NULL DEFAULT 0 COMMENT '일일 누적발전량',
+ `monthly_accumulated_output` float NOT NULL DEFAULT 0 COMMENT '월간 누적발전량',
  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
- PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8
+ PRIMARY KEY (`id`),
+ KEY `created_at` (`created_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=608 DEFAULT CHARSET=utf8
 ```
 
